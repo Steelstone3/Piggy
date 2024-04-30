@@ -1,3 +1,3 @@
-pub mod folder_selection_view;
+pub mod configuration;
 pub mod piggy;
 pub mod piggy_view;

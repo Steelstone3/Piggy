@@ -1,6 +1,7 @@
-use super::folder_selection_view::ConfigurationView;
 use crate::{commands::piggy_message::PiggyMessage, models::piggy::Piggy};
 use iced::widget::{column, Column};
+
+use super::configuration::configuration_view::ConfigurationView;
 
 pub struct PiggyView<'a> {
     folder_selection: Column<'a, PiggyMessage>,
