@@ -1,4 +1,6 @@
 #[derive(Debug, Clone)]
 pub enum PiggyMessage {
-    FolderChanged(String),
+    // Piggy Configuration
+    ProjectFolderLocationChanged(String),
+    PiggyConfigurationFileLocationChanged(String)
 }

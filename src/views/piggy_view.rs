@@ -1,4 +1,4 @@
-use super::folder_selection_view::FolderSelectionView;
+use super::folder_selection_view::ConfigurationView;
 use crate::{commands::piggy_message::PiggyMessage, models::piggy::Piggy};
 use iced::widget::{column, Column};
 
@@ -15,7 +15,7 @@ impl PiggyView<'_> {
 
     fn new<'a>(piggy: &Piggy) -> PiggyView<'a> {
         PiggyView {
-            folder_selection: FolderSelectionView::build_view(&piggy.piggy_settings),
+            folder_selection: ConfigurationView::build_view(&piggy.piggy_settings),
         }
     }
 }

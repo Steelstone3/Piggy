@@ -1,28 +1,41 @@
 use crate::{commands::piggy_message::PiggyMessage, models::piggy_settings::PiggySettings};
 use iced::widget::{column, text, text_input, Column, Text, TextInput};
 
-pub struct FolderSelectionView<'a> {
-    folder_selection_text: Text<'a>,
-    folder_selection_input: TextInput<'a, PiggyMessage>,
+pub struct ConfigurationView<'a> {
+    project_folder_location_text: Text<'a>,
+    project_folder_location_input: TextInput<'a, PiggyMessage>,
+    piggy_configuration_file_location_text: Text<'a>,
+    piggy_configuration_file_location_input: TextInput<'a, PiggyMessage>,
 }
 
-impl FolderSelectionView<'_> {
+impl ConfigurationView<'_> {
     pub fn build_view<'a>(piggy_settings: &PiggySettings) -> Column<'a, PiggyMessage> {
-        let folder_selection = FolderSelectionView::new(piggy_settings);
+        let configuration = ConfigurationView::new(piggy_settings);
 
         column![
-            folder_selection.folder_selection_text,
-            folder_selection.folder_selection_input,
+            configuration.project_folder_location_text,
+            configuration.project_folder_location_input,
+            configuration.piggy_configuration_file_location_text,
+            configuration.piggy_configuration_file_location_input,
         ]
-        // .spacing(10.0)
-        // .padding(10.0)
+        .spacing(10.0)
+        .padding(10.0)
     }
 
-    fn new<'a>(piggy_settings: &PiggySettings) -> FolderSelectionView<'a> {
-        FolderSelectionView {
-            folder_selection_text: text("Project Folder:"),
-            folder_selection_input: text_input("Enter Folder", &piggy_settings.folder)
-                .on_input(PiggyMessage::FolderChanged),
+    fn new<'a>(piggy_settings: &PiggySettings) -> ConfigurationView<'a> {
+        ConfigurationView {
+            project_folder_location_text: text("Project Folder:"),
+            project_folder_location_input: text_input(
+                "Enter Folder Location",
+                &piggy_settings.folder,
+            )
+            .on_input(PiggyMessage::ProjectFolderLocationChanged),
+            piggy_configuration_file_location_text: text("Configuration File:"),
+            piggy_configuration_file_location_input: text_input(
+                "Enter Piggy Configuration File Location",
+                &piggy_settings.configuration_file,
+            )
+            .on_input(PiggyMessage::PiggyConfigurationFileLocationChanged),
         }
     }
 }

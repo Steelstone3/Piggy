@@ -1,9 +1,8 @@
+use super::piggy_view::PiggyView;
 use crate::models::piggy_settings::PiggySettings;
 use crate::{commands::piggy_message::PiggyMessage, models::piggy::Piggy};
 use iced::widget::column;
 use iced::Sandbox;
-
-use super::piggy_view::PiggyView;
 
 impl Sandbox for Piggy {
     type Message = PiggyMessage;
@@ -20,12 +19,18 @@ impl Sandbox for Piggy {
 
     fn update(&mut self, message: Self::Message) {
         match message {
-            PiggyMessage::FolderChanged(folder) => self.piggy_settings.update_folder(folder),
+            PiggyMessage::ProjectFolderLocationChanged(project_folder_location) => {
+                self.piggy_settings.update_folder(project_folder_location)
+            }
+            PiggyMessage::PiggyConfigurationFileLocationChanged(
+                piggy_configuration_file_location,
+            ) => self
+                .piggy_settings
+                .update_configuration_file(piggy_configuration_file_location),
         }
     }
 
     fn view(&self) -> iced::Element<'_, Self::Message> {
-        // let main_view = MainView::build_view(self);
         let piggy_view = PiggyView::build_view(self);
 
         column![].push(piggy_view).into()
