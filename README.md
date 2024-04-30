@@ -1,24 +1,23 @@
-Rust Project Template
-=====================
+# Piggy
 
-Example project template for rust based projects
+General executor for running terminal commands
 
-### Running Example
+## Running
 
-> cd ~/Example
-> 
+> cd ~/Piggy
+>
 > cargo build
-> 
+>
 > cargo run
 
-### Tests
+## Tests
 
-> cd ~/Example
-> 
+> cd ~/Piggy
+>
 > cargo test
 
-### Dependencies
+## Dependencies
 
 Follow the steps for installing rustc runtime for your given operating system.
 
-> https://www.rust-lang.org/tools/install
+> <https://www.rust-lang.org/tools/install>

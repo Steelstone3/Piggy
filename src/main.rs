@@ -1,7 +1,10 @@
-mod controllers;
-mod models;
-mod presenters;
+use iced::{Sandbox, Settings};
+use models::piggy::Piggy;
 
-fn main() {
-    println!("Hello World!")
+mod commands;
+mod models;
+mod views;
+
+pub fn main() -> iced::Result {
+    Piggy::run(Settings::default())
 }
