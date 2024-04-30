@@ -1,2 +1,4 @@
-#[derive(Debug)]
-pub enum PiggyMessage {}
+#[derive(Debug, Clone)]
+pub enum PiggyMessage {
+    FolderChanged(String),
+}

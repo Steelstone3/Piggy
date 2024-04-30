@@ -1,8 +1,10 @@
-use iced::Sandbox;
+use super::piggy_settings::PiggySettings;
 use serde::{Deserialize, Serialize};
 
 #[derive(PartialEq, Serialize, Deserialize)]
-pub struct Piggy {}
+pub struct Piggy {
+    pub piggy_settings: PiggySettings,
+}
 
 impl Default for Piggy {
     fn default() -> Self {
@@ -10,5 +12,10 @@ impl Default for Piggy {
     }
 }
 
-// TODO controller wrapper functions?
-impl Piggy {}
+impl Piggy {
+    fn new() -> Self {
+        Self {
+            ..Default::default()
+        }
+    }
+}
