@@ -5,17 +5,3 @@ use serde::{Deserialize, Serialize};
 pub struct Piggy {
     pub piggy_settings: PiggySettings,
 }
-
-impl Default for Piggy {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl Piggy {
-    fn new() -> Self {
-        Self {
-            ..Default::default()
-        }
-    }
-}

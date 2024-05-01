@@ -7,16 +7,16 @@ pub struct PiggySettings {
 }
 
 impl PiggySettings {
-    pub fn new(folder_location: String, configuration_file_location: String) -> PiggySettings {
+    pub fn new(folder_location: &str, configuration_file_location: &str) -> PiggySettings {
         Self {
-            folder_location,
-            configuration_file_location,
+            folder_location: folder_location.to_string(),
+            configuration_file_location: configuration_file_location.to_string(),
         }
     }
 
-    pub fn new_using_default_configuration(folder_location: String) -> PiggySettings {
+    pub fn new_using_default_configuration(folder_location: &str) -> PiggySettings {
         Self {
-            folder_location,
+            folder_location: folder_location.to_string(),
             configuration_file_location: "".to_string(),
         }
     }
@@ -36,7 +36,7 @@ mod space_sprite_should {
         };
 
         // When
-        let piggy_settings = PiggySettings::new("example_1".to_string(), "example_2".to_string());
+        let piggy_settings = PiggySettings::new("example_1", "example_2");
 
         // Then
         assert_eq!(expected_piggy_settings, piggy_settings);
@@ -51,8 +51,7 @@ mod space_sprite_should {
         };
 
         // When
-        let piggy_settings =
-            PiggySettings::new_using_default_configuration("example_1".to_string());
+        let piggy_settings = PiggySettings::new_using_default_configuration("example_1");
 
         // Then
         assert_eq!(expected_piggy_settings, piggy_settings);
