@@ -1,4 +1,6 @@
-use inquire::{Confirm, Text};
+use inquire::{Confirm, Select, Text};
+
+use crate::models::job::Job;
 
 pub fn text_prompt(message: &str, help_prompt: &str, default_value: &str) -> String {
     Text::new(message)
@@ -13,6 +15,10 @@ pub fn confirmation(message: &str) -> bool {
         .with_default(false)
         .prompt()
         .unwrap_or_default()
+}
+
+pub fn job_selection(options: Vec<Job>) -> Job {
+    Select::new("Select Job:", options).prompt().unwrap()
 }
 
 #[allow(dead_code)]

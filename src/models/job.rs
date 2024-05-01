@@ -1,9 +1,17 @@
+use std::fmt::Display;
+
 use serde::{Deserialize, Serialize};
 
 #[derive(PartialEq, Serialize, Deserialize)]
 pub struct Job {
     pub name: String,
     pub commands: Vec<String>,
+}
+
+impl Display for Job {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.name)
+    }
 }
 
 impl Job {

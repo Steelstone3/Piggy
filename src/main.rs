@@ -1,30 +1,21 @@
-use controllers::file::{
+use controllers::{file::{
     create_default_piggy_configuration_file, is_existing_file, read_piggy_configuration_file,
-};
-use models::piggy::Piggy;
-use prompts::{confirmation, text_prompt};
+}, job_executor::execute};
+use prompts::{confirmation, job_selection, text_prompt};
 
 mod controllers;
 mod models;
 mod prompts;
 
 pub fn main() {
-    let mut piggy = Piggy::default();
+    let mut file_path = "piggy.json".to_string();
 
     if confirmation("Use default piggy.toml file?") {
-        let file_path = "piggy.json".to_string();
-
-        if !is_existing_file(&file_path)
-            && confirmation(
-                "Default piggy.toml file was not detected. Would you like to create one?",
-            )
-        {
+        if !is_existing_file(&file_path) {
             create_default_piggy_configuration_file()
         }
-
-        piggy = read_piggy_configuration_file(&file_path);
     } else {
-        let mut file_path = "".to_string();
+        file_path = "".to_string();
 
         while !is_existing_file(&file_path) {
             file_path = text_prompt(
@@ -33,7 +24,9 @@ pub fn main() {
                 "./piggy.json",
             );
         }
-
-        piggy = read_piggy_configuration_file(&file_path);
     }
+
+    let piggy = read_piggy_configuration_file(&file_path);
+    let job = job_selection(piggy.jobs);
+    execute(&job)
 }

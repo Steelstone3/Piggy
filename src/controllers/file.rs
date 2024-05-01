@@ -108,8 +108,6 @@ use std::{
 };
 
 pub fn is_existing_file(file_path: &str) -> bool {
-    let file_path = file_path;
-
     fs::metadata(file_path).is_ok()
 }
 
