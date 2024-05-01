@@ -7,11 +7,6 @@ pub struct Job {
 }
 
 impl Job {
-    pub fn create_default_jobs() {
-
-    }
-    
-    pub fn new(name: &str, commands: Vec<String>) {
-
-    }
+    #[allow(dead_code)]
+    pub fn create_default_jobs() {}
 }

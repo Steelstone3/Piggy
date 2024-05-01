@@ -1,15 +1,18 @@
-use inquire::{Text, Confirm};
+use inquire::{Confirm, Text};
 
-pub fn text_prompt(message:&str, help_prompt:&str, default_value:&str) -> String  {
+pub fn text_prompt(message: &str, help_prompt: &str, default_value: &str) -> String {
     Text::new(message)
-            .with_help_message(help_prompt)
-            .with_default(default_value)
-            .prompt()
-            .unwrap()
+        .with_help_message(help_prompt)
+        .with_default(default_value)
+        .prompt()
+        .unwrap()
 }
 
-pub fn confirmation(message:&str) -> bool{
-    Confirm::new(message).with_default(false).prompt().unwrap_or_default()
+pub fn confirmation(message: &str) -> bool {
+    Confirm::new(message)
+        .with_default(false)
+        .prompt()
+        .unwrap_or_default()
 }
 
 #[allow(dead_code)]

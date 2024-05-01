@@ -7,6 +7,7 @@ pub struct PiggySettings {
 }
 
 impl PiggySettings {
+    #[allow(dead_code)]
     pub fn new(folder_location: &str, configuration_file_location: &str) -> PiggySettings {
         Self {
             folder_location: folder_location.to_string(),
@@ -14,6 +15,7 @@ impl PiggySettings {
         }
     }
 
+    #[allow(dead_code)]
     pub fn new_using_default_configuration(folder_location: &str) -> PiggySettings {
         Self {
             folder_location: folder_location.to_string(),
