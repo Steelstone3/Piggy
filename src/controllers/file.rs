@@ -110,11 +110,7 @@ use std::{
 pub fn is_existing_file(file_path: &str) -> bool {
     let file_path = file_path;
 
-    if fs::metadata(file_path).is_ok() {
-        return true;
-    } else {
-        return false;
-    }
+    fs::metadata(file_path).is_ok()
 }
 
 pub fn create_default_piggy_configuration_file() {

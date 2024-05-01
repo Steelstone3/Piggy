@@ -1,4 +1,6 @@
-use controllers::file::{create_default_piggy_configuration_file, is_existing_file, read_piggy_configuration_file};
+use controllers::file::{
+    create_default_piggy_configuration_file, is_existing_file, read_piggy_configuration_file,
+};
 use models::piggy::Piggy;
 use prompts::{confirmation, text_prompt};
 
@@ -10,24 +12,28 @@ pub fn main() {
     let mut piggy = Piggy::default();
 
     if confirmation("Use default piggy.toml file?") {
-        let file_path = "piggy.json";
+        let file_path = "piggy.json".to_string();
 
-        if !is_existing_file(file_path)
+        if !is_existing_file(&file_path)
             && confirmation(
                 "Default piggy.toml file was not detected. Would you like to create one?",
             )
         {
-            // TODO create a default piggy.toml file
             create_default_piggy_configuration_file()
         }
 
-        piggy = read_piggy_configuration_file(file_path);
+        piggy = read_piggy_configuration_file(&file_path);
     } else {
-        // TODO detect piggy.toml exists in specified location
-        text_prompt(
-            "Specify piggy.toml file path",
-            "Where is piggy.toml on your system?",
-            ".",
-        );
+        let mut file_path = "".to_string();
+
+        while !is_existing_file(&file_path) {
+            file_path = text_prompt(
+                "Specify piggy.toml file path",
+                "Where is piggy.toml on your system?",
+                ".",
+            );
+        }
+
+        piggy = read_piggy_configuration_file(&file_path);
     }
 }
