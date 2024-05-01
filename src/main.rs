@@ -1,6 +1,9 @@
-use controllers::{file::{
-    create_default_piggy_configuration_file, is_existing_file, read_piggy_configuration_file,
-}, job_executor::execute};
+use controllers::{
+    file::{
+        create_default_piggy_configuration_file, is_existing_file, read_piggy_configuration_file,
+    },
+    job_executor::execute,
+};
 use prompts::{confirmation, job_selection, text_prompt};
 
 mod controllers;
@@ -28,5 +31,5 @@ pub fn main() {
 
     let piggy = read_piggy_configuration_file(&file_path);
     let job = job_selection(piggy.jobs);
-    execute(&job)
+    execute(&job, &piggy.piggy_settings)
 }
