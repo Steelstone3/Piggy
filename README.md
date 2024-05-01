@@ -4,17 +4,15 @@ General executor for running terminal commands
 
 ## Running
 
-> cd ~/Piggy
+> cd ~/Piggy/Piggy
 >
-> cargo build
->
-> cargo run
+> dotnet run
 
 ## Tests
 
-> cd ~/Piggy
+> cd ~/Piggy/PiggyTest
 >
-> cargo test
+> dotnet test
 
 ## Dependencies
 
