@@ -8,6 +8,12 @@ public class JobFactory : IJobFactory
         {
             new Job
             {
+                Name = "dotnet-run",
+                Command = "dotnet",
+                Arguments = new List<string>() { "run" }
+            },
+            new Job
+            {
                 Name = "dotnet-test",
                 Command = "dotnet",
                 Arguments = new List<string>() { "test" }
