@@ -29,8 +29,8 @@ pub fn main() {
         while !is_existing_file(&file_path) {
             file_path = text_prompt(
                 "Specify piggy.toml file path",
-                "Where is piggy.toml on your system?",
-                ".",
+                "Where is piggy.json on your system?",
+                "./piggy.json",
             );
         }
 
