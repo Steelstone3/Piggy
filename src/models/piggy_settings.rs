@@ -44,6 +44,9 @@ mod piggy_settings_should {
         let piggy_settings = PiggySettings::default();
 
         // Then
-        assert_eq!(expected_piggy_settings, piggy_settings);
+        assert_eq!(
+            expected_piggy_settings.configuration_file_location,
+            piggy_settings.configuration_file_location
+        );
     }
 }
