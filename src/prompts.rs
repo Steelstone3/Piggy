@@ -1,3 +1,5 @@
+use std::num::ParseIntError;
+
 use crate::models::job::Job;
 use inquire::{Confirm, Text};
 
@@ -17,18 +19,25 @@ pub fn confirmation_yes(message: &str) -> bool {
 }
 
 pub fn job_selection(options: &Vec<Job>) -> Option<&Job> {
-    for job in options {
-        println!("> {}", job.name)
+    for (index, job) in options.iter().enumerate() {
+        println!("{} > {}", index, job.name);
     }
 
-    let input = text_prompt("Select Job:", "Enter number of the job", "");
+    loop {
+        let input = text_prompt("Select Job:", "Enter number of the job", "");
 
-    options.get(parse_usize_numeric_value(input))
+        if let Ok(index) = parse_usize_numeric_value(&input) {
+            if let Some(job) = options.get(index) {
+                return Some(job);
+            } else {
+                println!("Invalid job number. Please enter a valid number.");
+            }
+        } else {
+            println!("Invalid input. Please enter a valid number.");
+        }
+    }
 }
 
-fn parse_usize_numeric_value(input: String) -> usize {
-    match input.chars().find(|character| character.is_numeric()) {
-        Some(_) => input.as_str().trim().parse::<usize>().unwrap(),
-        None => panic!("Not a numeric value"),
-    }
+fn parse_usize_numeric_value(input: &str) -> Result<usize, ParseIntError> {
+    input.trim().parse::<usize>()
 }
