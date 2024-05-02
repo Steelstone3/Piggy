@@ -1,22 +1,22 @@
 public class RunService : IRunService
 {
-    public void Run()
+    private readonly IFileFinder fileFinder;
+    private readonly IRunner runner;
+
+    public RunService(IFileFinder fileFinder, IRunner runner)
     {
-        string filePath = "piggy.json";
-        IPrompt prompt = new Prompt();
-        IFile file = new File();
-        IFileFinder fileFinder = new FileFinder(prompt);
+        this.fileFinder = fileFinder;
+        this.runner = runner;
+    }
 
-        IJobExecutor jobExecutor = new JobExecutor();
-        IRunner runService = new Runner(prompt, jobExecutor);
-
+    public void Run(IFile file, string filePath)
+    {
         filePath = fileFinder.FindFile(file, filePath);
-
-        runService.Run(file, filePath);
+        runner.Run(file, filePath);
     }
 }
 
 public interface IRunService
 {
-    void Run();
+    void Run(IFile file, string filePath);
 }
