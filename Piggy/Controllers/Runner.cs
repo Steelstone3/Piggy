@@ -13,7 +13,7 @@ public class Runner : IRunner
     {
         Piggy piggy = file.ReadPiggyConfigurationFile(filePath);
 
-        while (true)
+        do
         {
             Job job = prompt.JobSelection(piggy.Jobs);
             if (prompt.ConfirmSelectedJob(job))
@@ -21,6 +21,7 @@ public class Runner : IRunner
                 prompt.Print(jobExecutor.Execute(job, piggy.Settings));
             }
         }
+        while (prompt.ConfirmContinue());
     }
 }
 

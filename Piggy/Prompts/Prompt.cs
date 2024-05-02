@@ -41,6 +41,11 @@ public class Prompt : IPrompt
         return AnsiConsole.Confirm($"[red]Run:[/] {job.DisplayJobDetail()}");
     }
 
+    public bool ConfirmContinue()
+    {
+        return AnsiConsole.Confirm($"[green]Continue?:[/]");
+    }
+
     public void Print(string message)
     {
         AnsiConsole.WriteLine(message);
@@ -53,5 +58,6 @@ public interface IPrompt
     bool UseDefault();
     Job JobSelection(List<Job> jobs);
     bool ConfirmSelectedJob(Job job);
+    bool ConfirmContinue();
     void Print(string message);
 }
