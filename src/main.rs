@@ -1,6 +1,4 @@
-use controllers::{
-    file_finder::find_configuration_file, runner::run
-};
+use controllers::{file_finder::find_configuration_file, runner::run};
 
 mod controllers;
 mod models;

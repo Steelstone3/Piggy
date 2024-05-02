@@ -1,5 +1,5 @@
-use crate::prompts::{confirmation_yes, text_prompt};
 use super::file::{create_default_piggy_configuration_file, is_existing_file};
+use crate::prompts::{confirmation_yes, text_prompt};
 
 pub fn find_configuration_file(file_path: &mut String) {
     if confirmation_yes("Use default piggy.toml file?") {

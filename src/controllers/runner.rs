@@ -1,7 +1,6 @@
 use super::{file::read_piggy_configuration_file, job_executor::execute};
 use crate::prompts::{confirmation_yes, job_selection};
 
-
 pub fn run(file_path: String) {
     let mut is_not_quit = true;
     let piggy = read_piggy_configuration_file(&file_path);

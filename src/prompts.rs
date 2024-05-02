@@ -18,7 +18,7 @@ pub fn confirmation_yes(message: &str) -> bool {
         .unwrap_or_default()
 }
 
-pub fn job_selection(options: &Vec<Job>) -> Option<&Job> {
+pub fn job_selection(options: &[Job]) -> Option<&Job> {
     for (index, job) in options.iter().enumerate() {
         println!("{} > {}", index, job.name);
     }
