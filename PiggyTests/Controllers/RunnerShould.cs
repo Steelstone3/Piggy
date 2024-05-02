@@ -24,6 +24,7 @@ public class RunnerShould
         prompt.Setup(p => p.JobSelection(piggy.Jobs)).Returns(job);
         prompt.Setup(p => p.ConfirmSelectedJob(job)).Returns(true);
         prompt.Setup(p => p.Print(commandOutput));
+        prompt.Setup(p => p.ConfirmContinue()).Returns(false);
         IRunner runner = new Runner(prompt.Object, jobExecutor.Object);
 
         // When
