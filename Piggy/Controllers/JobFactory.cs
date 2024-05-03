@@ -9,12 +9,14 @@ public class JobFactory : IJobFactory
             new Job
             {
                 Name = "dotnet-run",
+                SubFolder = "",
                 Command = "dotnet",
                 Arguments = new List<string>() { "run" }
             },
             new Job
             {
                 Name = "dotnet-test",
+                SubFolder = "ProjectTests",
                 Command = "dotnet",
                 Arguments = new List<string>() { "test" }
             }

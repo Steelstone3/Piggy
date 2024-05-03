@@ -12,6 +12,8 @@ public class JobShould
         // Then
         Assert.NotNull(job.Name);
         Assert.Empty(job.Name);
+        Assert.NotNull(job.SubFolder);
+        Assert.Empty(job.SubFolder);
         Assert.NotNull(job.Command);
         Assert.Empty(job.Command);
         Assert.NotNull(job.Arguments);
