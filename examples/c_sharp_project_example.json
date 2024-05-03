@@ -1,0 +1,117 @@
+{
+    "piggy_settings": {
+      "project_folder_location": "/home/example_user/develop/sources/Bubbles-Dive-Planner",
+      "configuration_file_location": "piggy.json"
+    },
+    "jobs": [
+      {
+        "name": "code",
+        "sub_folder": "",
+        "command": "code",
+        "arguments": [
+          "."
+        ]
+      },
+      {
+        "name": "dotnet-run",
+        "sub_folder": "/BubblesDivePlanner",
+        "command": "dotnet",
+        "arguments": [
+          "run"
+        ]
+      },
+      {
+        "name": "dotnet-test",
+        "sub_folder": "/BubblesDivePlannerTests",
+        "command": "dotnet",
+        "arguments": [
+          "test"
+        ]
+      },
+      {
+        "name": "dotnet-outdated",
+        "sub_folder": "",
+        "command": "dotnet",
+        "arguments": [
+          "outdated",
+          "-r"
+        ]
+      },
+      {
+        "name": "git-status",
+        "sub_folder": "",
+        "command": "git",
+        "arguments": [
+          "status"
+        ]
+      },
+      {
+        "name": "git-clean",
+        "sub_folder": "",
+        "command": "git",
+        "arguments": [
+          "clean",
+          "-d",
+          "-f",
+          "-x"
+        ]
+      },
+      {
+        "name": "git-add",
+        "sub_folder": "",
+        "command": "git",
+        "arguments": [
+          "add",
+          "--all"
+        ]
+      },
+      {
+        "name": "git-commit",
+        "sub_folder": "",
+        "command": "git",
+        "arguments": [
+          "commit",
+          "-m update"
+        ]
+      },
+      {
+        "name": "git-pull-rebase",
+        "sub_folder": "",
+        "command": "git",
+        "arguments": [
+          "pull",
+          "--rebase"
+        ]
+      },
+      {
+        "name": "git-push",
+        "sub_folder": "",
+        "command": "git",
+        "arguments": [
+          "push"
+        ]
+      },
+      {
+        "name": "dotnet-outdated-install",
+        "sub_folder": "",
+        "command": "dotnet",
+        "arguments": [
+          "tool",
+          "install",
+          "--global",
+          "dotnet-outdated-tool"
+        ]
+      },
+      {
+        "name": "dotnet-outdated-update",
+        "sub_folder": "",
+        "command": "dotnet",
+        "arguments": [
+          "tool",
+          "update",
+          "--global",
+          "dotnet-outdated-tool"
+        ]
+      }
+    ]
+  }
