@@ -29,8 +29,16 @@
         ]
       },
       {
-        "name": "dotnet-format",
-        "sub_folder": "",
+        "name": "dotnet-format-1",
+        "sub_folder": "/BubblesDivePlanner",
+        "command": "dotnet",
+        "arguments": [
+          "format"
+        ]
+      },
+      {
+        "name": "dotnet-format-2",
+        "sub_folder": "/BubblesDivePlannerTests",
         "command": "dotnet",
         "arguments": [
           "format"
