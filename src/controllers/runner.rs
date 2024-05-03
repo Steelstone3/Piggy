@@ -6,7 +6,11 @@ pub fn run(file_path: String) {
     let piggy = read_piggy_configuration_file(&file_path);
 
     while is_not_quit {
-        let complete_project_folder = format!("Project: {}\nConfiguration: {}", piggy.piggy_settings.project_folder_location, piggy.piggy_settings.configuration_file_location);
+        let complete_project_folder = format!(
+            "Project: {}\nConfiguration: {}",
+            piggy.piggy_settings.project_folder_location,
+            piggy.piggy_settings.configuration_file_location
+        );
         println!("{}", complete_project_folder);
 
         let job = job_selection(&piggy.jobs);
