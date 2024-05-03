@@ -1,6 +1,6 @@
 {
     "piggy_settings": {
-      "project_folder_location": "/home/example_user/develop/sources/Bubbles-Dive-Planner",
+      "project_folder_location": "/home/example_user/develop/sources/Critter-Cove-Zoo-Manager",
       "configuration_file_location": "piggy.json"
     },
     "jobs": [
@@ -13,36 +13,45 @@
         ]
       },
       {
-        "name": "dotnet-run",
-        "sub_folder": "/BubblesDivePlanner",
-        "command": "dotnet",
-        "arguments": [
-          "run"
-        ]
-      },
-      {
-        "name": "dotnet-test",
-        "sub_folder": "/BubblesDivePlannerTests",
-        "command": "dotnet",
-        "arguments": [
-          "test"
-        ]
-      },
-      {
-        "name": "dotnet-format",
+        "name": "cargo-run",
         "sub_folder": "",
-        "command": "dotnet",
+        "command": "cargo",
         "arguments": [
-          "format"
+          "r"
         ]
       },
       {
-        "name": "dotnet-outdated",
+        "name": "cargo-test",
         "sub_folder": "",
-        "command": "dotnet",
+        "command": "cargo",
         "arguments": [
-          "outdated",
-          "-r"
+          "t"
+        ]
+      },
+      {
+        "name": "cargo-clippy",
+        "sub_folder": "",
+        "command": "cargo",
+        "arguments": [
+          "clippy",
+          "--fix",
+          "--allow-dirty"
+        ]
+      },
+      {
+        "name": "cargo-format",
+        "sub_folder": "",
+        "command": "cargo",
+        "arguments": [
+          "fmt"
+        ]
+      },
+      {
+        "name": "cargo-update",
+        "sub_folder": "",
+        "command": "cargo",
+        "arguments": [
+          "update"
         ]
       },
       {
@@ -106,28 +115,6 @@
         "command": "git",
         "arguments": [
           "push"
-        ]
-      },
-      {
-        "name": "dotnet-outdated-install",
-        "sub_folder": "",
-        "command": "dotnet",
-        "arguments": [
-          "tool",
-          "install",
-          "--global",
-          "dotnet-outdated-tool"
-        ]
-      },
-      {
-        "name": "dotnet-outdated-update",
-        "sub_folder": "",
-        "command": "dotnet",
-        "arguments": [
-          "tool",
-          "update",
-          "--global",
-          "dotnet-outdated-tool"
         ]
       }
     ]
