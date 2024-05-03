@@ -1,20 +1,12 @@
 {
   "piggy_settings": {
-    "project_folder_location": "/home/example_user/develop/sources/Bubbles-Dive-Planner",
+    "project_folder_location": "C:\\develop\\sources\\some-project",
     "configuration_file_location": "piggy.json"
   },
   "jobs": [
     {
-      "name": "code",
-      "sub_folder": "",
-      "command": "code",
-      "arguments": [
-        "."
-      ]
-    },
-    {
       "name": "dotnet-run",
-      "sub_folder": "/BubblesDivePlanner",
+      "sub_folder": "\\BubblesDivePlanner",
       "command": "dotnet",
       "arguments": [
         "run"
@@ -22,7 +14,7 @@
     },
     {
       "name": "dotnet-test",
-      "sub_folder": "/BubblesDivePlannerTests",
+      "sub_folder": "\\BubblesDivePlannerTests",
       "command": "dotnet",
       "arguments": [
         "test"
@@ -30,7 +22,7 @@
     },
     {
       "name": "dotnet-format-1",
-      "sub_folder": "/BubblesDivePlanner",
+      "sub_folder": "\\BubblesDivePlanner",
       "command": "dotnet",
       "arguments": [
         "format"
@@ -38,7 +30,7 @@
     },
     {
       "name": "dotnet-format-2",
-      "sub_folder": "/BubblesDivePlannerTests",
+      "sub_folder": "\\BubblesDivePlannerTests",
       "command": "dotnet",
       "arguments": [
         "format"
@@ -54,23 +46,6 @@
       ]
     },
     {
-      "name": "git-status",
-      "sub_folder": "",
-      "command": "git",
-      "arguments": [
-        "status"
-      ]
-    },
-    {
-      "name": "git-branch",
-      "sub_folder": "",
-      "command": "git",
-      "arguments": [
-        "branch",
-        "-a"
-      ]
-    },
-    {
       "name": "git-clean",
       "sub_folder": "",
       "command": "git",
@@ -79,6 +54,14 @@
         "-d",
         "-f",
         "-x"
+      ]
+    },
+    {
+      "name": "git-status",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "status"
       ]
     },
     {
@@ -100,7 +83,7 @@
       ]
     },
     {
-      "name": "git-pull-rebase",
+      "name": "git-pull",
       "sub_folder": "",
       "command": "git",
       "arguments": [

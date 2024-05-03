@@ -1,121 +1,121 @@
 {
-    "piggy_settings": {
-      "project_folder_location": "/home/example_user/develop/sources/Critter-Cove-Zoo-Manager",
-      "configuration_file_location": "piggy.json"
+  "piggy_settings": {
+    "project_folder_location": "/home/example_user/develop/sources/Critter-Cove-Zoo-Manager",
+    "configuration_file_location": "piggy.json"
+  },
+  "jobs": [
+    {
+      "name": "code",
+      "sub_folder": "",
+      "command": "code",
+      "arguments": [
+        "."
+      ]
     },
-    "jobs": [
-      {
-        "name": "code",
-        "sub_folder": "",
-        "command": "code",
-        "arguments": [
-          "."
-        ]
-      },
-      {
-        "name": "cargo-run",
-        "sub_folder": "",
-        "command": "cargo",
-        "arguments": [
-          "r"
-        ]
-      },
-      {
-        "name": "cargo-test",
-        "sub_folder": "",
-        "command": "cargo",
-        "arguments": [
-          "t"
-        ]
-      },
-      {
-        "name": "cargo-clippy",
-        "sub_folder": "",
-        "command": "cargo",
-        "arguments": [
-          "clippy",
-          "--fix",
-          "--allow-dirty"
-        ]
-      },
-      {
-        "name": "cargo-format",
-        "sub_folder": "",
-        "command": "cargo",
-        "arguments": [
-          "fmt"
-        ]
-      },
-      {
-        "name": "cargo-update",
-        "sub_folder": "",
-        "command": "cargo",
-        "arguments": [
-          "update"
-        ]
-      },
-      {
-        "name": "git-status",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "status"
-        ]
-      },
-      {
-        "name": "git-branch",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "branch",
-          "-a"
-        ]
-      },
-      {
-        "name": "git-clean",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "clean",
-          "-d",
-          "-f",
-          "-x"
-        ]
-      },
-      {
-        "name": "git-add",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "add",
-          "--all"
-        ]
-      },
-      {
-        "name": "git-commit",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "commit",
-          "-m update"
-        ]
-      },
-      {
-        "name": "git-pull-rebase",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "pull",
-          "--rebase"
-        ]
-      },
-      {
-        "name": "git-push",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "push"
-        ]
-      }
-    ]
-  }
+    {
+      "name": "cargo-run",
+      "sub_folder": "",
+      "command": "cargo",
+      "arguments": [
+        "r"
+      ]
+    },
+    {
+      "name": "cargo-test",
+      "sub_folder": "",
+      "command": "cargo",
+      "arguments": [
+        "t"
+      ]
+    },
+    {
+      "name": "cargo-clippy",
+      "sub_folder": "",
+      "command": "cargo",
+      "arguments": [
+        "clippy",
+        "--fix",
+        "--allow-dirty"
+      ]
+    },
+    {
+      "name": "cargo-format",
+      "sub_folder": "",
+      "command": "cargo",
+      "arguments": [
+        "fmt"
+      ]
+    },
+    {
+      "name": "cargo-update",
+      "sub_folder": "",
+      "command": "cargo",
+      "arguments": [
+        "update"
+      ]
+    },
+    {
+      "name": "git-status",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "status"
+      ]
+    },
+    {
+      "name": "git-branch",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "branch",
+        "-a"
+      ]
+    },
+    {
+      "name": "git-clean",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "clean",
+        "-d",
+        "-f",
+        "-x"
+      ]
+    },
+    {
+      "name": "git-add",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "add",
+        "--all"
+      ]
+    },
+    {
+      "name": "git-commit",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "commit",
+        "-m update"
+      ]
+    },
+    {
+      "name": "git-pull-rebase",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "pull",
+        "--rebase"
+      ]
+    },
+    {
+      "name": "git-push",
+      "sub_folder": "",
+      "command": "git",
+      "arguments": [
+        "push"
+      ]
+    }
+  ]
+}

@@ -1,62 +1,62 @@
 {
     "piggy_settings": {
-      "project_folder_location": "C:\\develop\\sources\\some-project",
-      "configuration_file_location": "piggy.json"
+        "project_folder_location": "C:\\develop\\sources\\some-project",
+        "configuration_file_location": "piggy.json"
     },
     "jobs": [
-      {
-        "name": "git-clean",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "clean",
-          "-d",
-          "-f",
-          "-x"
-        ]
-      },
-      {
-        "name": "git-status",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "status"
-        ]
-      },
-      {
-        "name": "git-add",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "add",
-          "--all"
-        ]
-      },
-      {
-        "name": "git-commit",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "commit",
-          "-m update"
-        ]
-      },
-      {
-        "name": "git-pull",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "pull",
-          "--rebase"
-        ]
-      },
-      {
-        "name": "git-push",
-        "sub_folder": "",
-        "command": "git",
-        "arguments": [
-          "push"
-        ]
-      }
+        {
+            "name": "git-clean",
+            "sub_folder": "",
+            "command": "git",
+            "arguments": [
+                "clean",
+                "-d",
+                "-f",
+                "-x"
+            ]
+        },
+        {
+            "name": "git-status",
+            "sub_folder": "",
+            "command": "git",
+            "arguments": [
+                "status"
+            ]
+        },
+        {
+            "name": "git-add",
+            "sub_folder": "",
+            "command": "git",
+            "arguments": [
+                "add",
+                "--all"
+            ]
+        },
+        {
+            "name": "git-commit",
+            "sub_folder": "",
+            "command": "git",
+            "arguments": [
+                "commit",
+                "-m update"
+            ]
+        },
+        {
+            "name": "git-pull",
+            "sub_folder": "",
+            "command": "git",
+            "arguments": [
+                "pull",
+                "--rebase"
+            ]
+        },
+        {
+            "name": "git-push",
+            "sub_folder": "",
+            "command": "git",
+            "arguments": [
+                "push"
+            ]
+        }
     ]
-  }
+}
